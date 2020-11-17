@@ -1,5 +1,6 @@
-#include<iostream>
-#include<string>
+#include <fstream>
+ofstream file("file.txt");
+file <<"Hello,World";
 
 using namespace std;
 string student_name,student_id;
@@ -20,16 +21,16 @@ void input (){
 	
 	do {
 
-cout << "Student name ";
+file << "Student name ";
  cin >> student_name;
  students[i][0] = student_name;
-cout << "student id:";
+file << "student id:";
 cin>>student_id;
 students[i][1] = student_id;
- cout << "Department: ";
+ file << "Department: ";
  cin >> debarment;
  dep[i] = debarment;
- cout<<"Enter the data for 8 items "<<endl;
+ file <<"Enter the data for 8 items "<<endl;
  for(int j=0;j<8;j++){
  	 cin>>student_item[j];
  }
@@ -48,8 +49,8 @@ cout<<endl;
 
 void output (){
 	 for(int i = 0;i<10;i++){
- 		cout<<"NAME :"<<students[i][0]<<endl;
- 		cout<<"ID: " <<students[i][1]<<endl;
+ 		file<<"NAME :"<<students[i][0]<<endl;
+ 		file<<"ID: " <<students[i][1]<<endl;
  		
  		 switch(dep[i])
 { case 'A':
@@ -62,13 +63,13 @@ void output (){
  break;
 default: division ="Unknown";
 }
- 		cout<<"debarment: "<<division<<endl;
- 		cout<<"average = "<<avg[i]<<endl;
+ 		file<<"debarment: "<<division<<endl;
+ 		file<<"average = "<<avg[i]<<endl;
  		
-		if(avg[i]>= 90 && avg[i] <= 100)  cout<<"General appreciation : Excellent"<<endl;
- 		else if(avg[i] >= 70 && avg[i] < 80) cout<<"General appreciation : Good"<<endl;
- 		else if(avg[i] >= 50 && avg[i] < 70) cout<<"General appreciation : Average"<<endl;
- 		else if(avg[i] <50) cout<<"General appreciation : Bad"<<endl;
+		if(avg[i]>= 90 && avg[i] <= 100)  file<<"General appreciation : Excellent"<<endl;
+ 		else if(avg[i] >= 70 && avg[i] < 80) file<<"General appreciation : Good"<<endl;
+ 		else if(avg[i] >= 50 && avg[i] < 70) file<<"General appreciation : Average"<<endl;
+ 		else if(avg[i] <50) file<<"General appreciation : Bad"<<endl;
 	 
  }
 }
@@ -82,5 +83,4 @@ output ();
 
  return 0;
  }
- 
  
