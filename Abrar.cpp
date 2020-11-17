@@ -2,8 +2,6 @@
 #include<string>
 
 using namespace std;
-int main (void)
-{
 string student_name,student_id;
 int student_item[8];
 int avg[8];
@@ -16,7 +14,11 @@ string students[10][2];
 	int i =0;
 	int sum=0;
 	int average;
-do {
+
+
+void input (){
+	
+	do {
 
 cout << "Student name ";
  cin >> student_name;
@@ -41,21 +43,11 @@ sum = 0;
  
 cout<<endl;
 }while (i<10);
-//avarege 
 
-char grade;
- 		if(result >= 90 && result <= 100) grade = 'A';
- else if(result >= 80 && result< 90) grade = 'B';
- else if(result >= 70 && result < 80) grade = 'C';
- else if(result >= 60 && result < 60) grade = 'D';
- else grade = 'F';
- /*
- cout<<endl << "Name: " << student_name << endl;
-cout << "ID: " << student_id << endl;
- cout << "grade: " <<grade<<endl;
- cout << "debarment: " <<division<<endl;
- */
- for(int i = 0;i<10;i++){
+}
+
+void output (){
+	 for(int i = 0;i<10;i++){
  		cout<<"NAME :"<<students[i][0]<<endl;
  		cout<<"ID: " <<students[i][1]<<endl;
  		
@@ -79,6 +71,14 @@ default: division ="Unknown";
  		else if(avg[i] <50) cout<<"General appreciation : Bad"<<endl;
 	 
  }
+}
+
+
+int main (void)
+{
+
+ input ();
+output ();
 
  return 0;
  }
